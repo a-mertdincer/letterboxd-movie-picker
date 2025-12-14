@@ -21,7 +21,7 @@ A beautiful, premium web application that helps you decide what to watch next. E
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/yourusername/lb_movie_picker.git
+   git clone https://github.com/a-mertdincer/lb_movie_picker.git
    ```
 2. Install dependencies
    ```sh
