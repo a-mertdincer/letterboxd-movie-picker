@@ -2,8 +2,6 @@
 
 A beautiful, premium web application that helps you decide what to watch next. Enter any Letterboxd list URL, and let fate decide your next movie night.
 
-![Project Preview](https://placehold.co/1000x600/101010/ffffff?text=Application+Preview)
-
 ## ✨ Features
 
 - **🎨 Premium UI**: Modern, dark-themed interface with glassmorphism effects.
