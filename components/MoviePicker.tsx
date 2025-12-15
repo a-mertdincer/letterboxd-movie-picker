@@ -108,24 +108,24 @@ export default function MoviePicker() {
     const displayImage = highResPoster || selectedMovie?.image || DEFAULT_POSTER;
 
     return (
-        <div className="w-full max-w-2xl mx-auto p-6">
-            <div className="glass-panel p-8 rounded-2xl mb-8">
+        <div className="w-full max-w-2xl mx-auto p-4 sm:p-6">
+            <div className="glass-panel p-5 sm:p-8 rounded-2xl mb-8">
                 <div className="flex flex-col gap-4">
                     <label className="text-sm font-medium text-gray-400 uppercase tracking-widest">
                         Letterboxd List URL
                     </label>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row gap-3">
                         <input
                             type="text"
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
                             placeholder="https://letterboxd.com/user/list/..."
-                            className="flex-1 bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                            className="w-full sm:flex-1 bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                         />
                         <button
                             onClick={fetchMovies}
                             disabled={loading || !url}
-                            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
                         >
                             {loading ? <Loader2 className="animate-spin" /> : 'Load List'}
                         </button>
@@ -148,10 +148,10 @@ export default function MoviePicker() {
                         <button
                             onClick={pickRandomMovie}
                             disabled={isShuffling}
-                            className="group relative bg-white text-black font-black text-xl px-12 py-4 rounded-full hover:scale-105 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] disabled:opacity-50 disabled:hover:scale-100"
+                            className="group relative bg-white text-black font-black text-lg sm:text-xl px-8 sm:px-12 py-3 sm:py-4 rounded-full hover:scale-105 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] disabled:opacity-50 disabled:hover:scale-100 w-full sm:w-auto"
                         >
-                            <span className="flex items-center gap-3">
-                                <Shuffle className={cn("w-6 h-6", isShuffling && "animate-spin")} />
+                            <span className="flex items-center justify-center gap-3">
+                                <Shuffle className={cn("w-5 h-5 sm:w-6 sm:h-6", isShuffling && "animate-spin")} />
                                 {isShuffling ? 'PICKING...' : 'PICK RANDOM MOVIE'}
                             </span>
                         </button>
@@ -167,7 +167,7 @@ export default function MoviePicker() {
                                     "relative z-10 rounded-xl overflow-hidden shadow-2xl transition-all duration-300",
                                     !isShuffling && "poster-glow scale-105 ring-4 ring-primary/50"
                                 )}>
-                                    <div className="relative w-[300px] h-[450px] bg-gray-900">
+                                    <div className="relative w-full max-w-[300px] aspect-[2/3] bg-gray-900">
                                         {/* Loading State Overlay */}
                                         {posterLoading && !isShuffling && (
                                             <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-20 backdrop-blur-sm">
